@@ -20,7 +20,7 @@ const ScrollDownArrow = () => {
         }
       >
         <p className="text-center text-lg">Scroll down</p>
-        <ChevronDown className="h-12 w-12 text-primary text-orange" />
+        <ChevronDown color="#FFA600" className="h-12 w-12 text-primary" />
       </motion.div>
     </div>
   );
