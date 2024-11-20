@@ -1,42 +1,47 @@
+import { client, sanityFetch, urlFor } from "@/lib/sanity";
+import { SKILLS_QUERY } from "@/query/sanity";
+import { div } from "framer-motion/client";
+import { SanityDocument } from "next-sanity";
 import Image from "next/image";
 import React from "react";
 
-const Skills = () => {
+export const Skills = async () => {
+  // const skills = await client.fetch<SanityDocument[]>(
+  //   SKILLS_QUERY,
+  //   {},
+  //   options
+  // );
+
+  const skills = await sanityFetch<SanityDocument[]>({
+    query: SKILLS_QUERY,
+  });
+
   return (
-    <div className="w-full p-10 flex flex-wrap justify-center items-center gap-4">
-      <div className="relative size-28 max-w-28 p-4 flex flex-grow flex-col justify-center items-center gap-2 rounded-lg bg-white/10">
-        <div className="w-full h-full flex justify-center items-center">
-          <Image width={50} height={50} src="/images/react.png" alt="react" />
-        </div>
-        <p>React</p>
-      </div>
+    <section
+      id="skills"
+      className="w-full px-10 py-16 flex flex-col items-center gap-12"
+    >
+      <p className="text-4xl font-bold">What I Use to Build</p>
 
-      <div className="relative size-28 max-w-28 p-4 flex flex-grow flex-col justify-center items-center gap-2 rounded-lg bg-white/10">
-        <div className="w-full h-full flex justify-center items-center">
-          <Image width={50} height={50} src="/images/html.png" alt="html" />
-        </div>
-        <p>Html</p>
+      <div className="w-full flex flex-wrap justify-center items-center gap-4">
+        {skills.map((skill) => (
+          <div
+            key={skill._id}
+            className="relative size-28 max-w-28 p-4 flex flex-grow flex-col justify-center items-center gap-2 rounded-xl bg-white/10 "
+          >
+            <div className="w-full h-full flex justify-center items-center">
+              <Image
+                width={50}
+                height={50}
+                src={urlFor(skill.imageSrc)?.url() as string}
+                alt={skill.name}
+              />
+            </div>
+            <p className="text-center">{skill.name}</p>
+          </div>
+        ))}
       </div>
-
-      <div className="relative size-28 max-w-28 p-4 flex flex-grow flex-col justify-center items-center gap-2 rounded-lg bg-white/10">
-        <div className="w-full h-full flex justify-center items-center">
-          <Image width={50} height={50} src="/images/css.png" alt="tailwind" />
-        </div>
-        <p>CSS</p>
-      </div>
-
-      <div className="relative size-28 max-w-28 p-4 flex flex-grow flex-col justify-center items-center gap-2 rounded-lg bg-white/10">
-        <div className="w-full h-full flex justify-center items-center">
-          <Image
-            width={50}
-            height={50}
-            src="/images/tailwind.png"
-            alt="tailwind"
-          />
-        </div>
-        <p>Tailwind</p>
-      </div>
-    </div>
+    </section>
   );
 };
 
