@@ -19,9 +19,9 @@ export const Skills = async () => {
   return (
     <section
       id="skills"
-      className="w-full px-10 py-16 flex flex-col items-center gap-12"
+      className="w-full sm:px-10 sm:py-16 flex flex-col items-center gap-12"
     >
-      <p className="text-4xl font-bold">What I Use to Build</p>
+      <p className="text-4xl font-bold text-center">What I Use to Build</p>
 
       <div className="w-full flex flex-wrap justify-center items-center gap-4">
         {skills.map((skill) => (

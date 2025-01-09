@@ -1,28 +1,32 @@
 import React from "react";
 import ScrollDownArrow from "../ScrollDownArrow";
+import FloatingLogo from "../FloatingLogo";
 
 const HeroSection = () => {
   return (
     <div className="relative w-full h-screen flex justify-center items-center">
+      <FloatingLogos />
+
       <div className="flex flex-col items-center gap-8 -mt-28">
         <div className="space-y-2">
-          <p className="font-extrabold text-3xl text-orange">I am</p>
-          <p className="uppercase font-extrabold text-6xl ">
+          <h4 className="font-extrabold text-xl sm:text-3xl text-orange">
+            I am
+          </h4>
+          <h1 className="text-center uppercase font-extrabold text-5xl sm:text-6xl ">
             GEMMUEL DELA Peña
-          </p>
-          <p className="font-extrabold text-3xl  text-end text-orange">
+          </h1>
+          <h4 className="font-extrabold text-xl sm:text-3xl  text-end text-orange">
             Web Developer
-          </p>
+          </h4>
         </div>
 
         <div className="flex flex-col items-center gap-4">
           <p className="text-center text-white/50 max-w-xl">
-            I'm a web developer based in the Philippines, specializing in
-            front-end development. Let's collaborate and bring your ideas to
-            life!
+            A web developer based in the Philippines, specializing in front-end
+            development. Let's collaborate and bring your ideas to life!
           </p>
 
-          <div className="space-x-4">
+          <div className="flex flex-wrap items-center justify-center gap-4">
             <button className="font-semibold min-w-[10rem] px-8 py-3  bg-orange bg-opacity-70 hover:bg-opacity-65 rounded-full">
               Get in touch
             </button>
@@ -35,6 +39,32 @@ const HeroSection = () => {
 
       <ScrollDownArrow />
     </div>
+  );
+};
+
+const FloatingLogos = () => {
+  return (
+    <>
+      <FloatingLogo
+        className="absolute left-10 top-1/4"
+        image="/images/react.png"
+        duration={3}
+      />
+      <FloatingLogo
+        className="absolute left-48 top-32"
+        image="/images/nextjs.png"
+      />
+
+      <FloatingLogo
+        className="absolute right-10 top-1/4"
+        image="/images/tailwind.png"
+      />
+      <FloatingLogo
+        className="absolute right-48 top-32"
+        image="/images/copilot.png"
+        duration={3}
+      />
+    </>
   );
 };
 

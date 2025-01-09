@@ -10,7 +10,7 @@ const ScrollDownArrow = () => {
           y: [0, 24, 0],
         }}
         transition={{
-          duration: 1.5,
+          duration: 2,
           repeat: Infinity,
           repeatType: "loop",
         }}
@@ -19,8 +19,8 @@ const ScrollDownArrow = () => {
           window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
         }
       >
-        <p className="text-center text-lg">Scroll down</p>
-        <ChevronDown color="#FFA600" className="h-12 w-12 text-primary" />
+        <p className="text-center ">Scroll down</p>
+        <ChevronDown color="#FFA600" className="size-10 text-primary" />
       </motion.div>
     </div>
   );
