@@ -22,21 +22,21 @@ export const Skills = async () => {
     >
       <p className="text-4xl font-bold text-center">What I Use to Build</p>
 
-      <div className="w-full flex flex-wrap justify-center items-center gap-4">
+      <div className="w-full flex flex-wrap justify-center items-center gap-2 sm:gap-4">
         {skills.map((skill) => (
           <div
             key={skill._id}
-            className="relative size-28 max-w-28 p-4 flex flex-grow flex-col justify-center items-center gap-2 rounded-xl bg-white/10 "
+            className="relative size-24 sm:size-28 max-w-28 p-4 flex flex-grow flex-col justify-center items-center gap-2 rounded-xl bg-white/10 "
           >
-            <div className="w-full h-full flex justify-center items-center">
+            <div className="relative w-full h-full flex justify-center items-center">
               <Image
-                width={50}
-                height={50}
+                width={40}
+                height={40}
                 src={urlFor(skill.imageSrc)?.url() as string}
                 alt={skill.name}
               />
             </div>
-            <p className="text-center">{skill.name}</p>
+            <p className="text-center text-sm sm:text-base">{skill.name}</p>
           </div>
         ))}
       </div>

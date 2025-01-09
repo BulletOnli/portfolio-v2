@@ -17,7 +17,7 @@ const FloatingLogo = ({
   return (
     <div className={`flex items-center justify-center ${className}`}>
       <div
-        className="relative size-20"
+        className="relative size-16 sm:size-20"
         style={{
           animation: `float ${duration}s ease-in-out infinite`,
         }}

@@ -27,13 +27,13 @@ const HeroSection = () => {
             development. Let&apos;s collaborate and bring your ideas to life!
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4">
             <Link href="#contact">
-              <button className="font-semibold min-w-[10rem] px-8 py-3  bg-orange bg-opacity-70 hover:bg-opacity-65 rounded-full">
+              <button className="text-sm sm:text-base font-semibold min-w-[10rem] px-8 py-3  bg-orange bg-opacity-70 hover:bg-opacity-65 rounded-full">
                 Get in touch
               </button>
             </Link>
-            <button className="min-w-[10rem] px-8 py-3 bg-white bg-opacity-10 hover:bg-opacity-15 rounded-full">
+            <button className="text-sm sm:text-base min-w-[10rem] px-8 py-3 bg-white bg-opacity-10 hover:bg-opacity-15 rounded-full">
               About me
             </button>
           </div>
@@ -49,21 +49,21 @@ const FloatingLogos = () => {
   return (
     <>
       <FloatingLogo
-        className="absolute left-10 md:top-1/4 bottom-32 md:bottom-auto"
+        className="absolute left-10 md:top-1/4 bottom-28 md:bottom-auto"
         image="/images/react.png"
         duration={3}
       />
       <FloatingLogo
-        className="absolute left-14 sm:left-48 top-32"
+        className="absolute left-14 sm:left-48 top-16 sm:top-32"
         image="/images/nextjs.png"
       />
 
       <FloatingLogo
-        className="absolute right-10 md:top-1/4 bottom-32 md:bottom-auto"
+        className="absolute right-10 md:top-1/4 bottom-24 md:bottom-auto"
         image="/images/tailwind.png"
       />
       <FloatingLogo
-        className="absolute right-14 sm:right-48 top-32"
+        className="absolute right-14 sm:right-48 top-10 sm:top-32"
         image="/images/copilot.png"
         duration={3}
       />
