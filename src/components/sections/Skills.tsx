@@ -1,6 +1,5 @@
-import { client, sanityFetch, urlFor } from "@/lib/sanity";
+import { sanityFetch, urlFor } from "@/lib/sanity";
 import { SKILLS_QUERY } from "@/query/sanity";
-import { div } from "framer-motion/client";
 import { SanityDocument } from "next-sanity";
 import Image from "next/image";
 import React from "react";

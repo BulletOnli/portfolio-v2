@@ -1,3 +1,4 @@
+import ContactSection from "@/components/sections/ContactSection";
 import HeroSection from "@/components/sections/HeroSection";
 import Skills from "@/components/sections/Skills";
 import React from "react";
@@ -13,9 +14,7 @@ const Homepage = async () => {
       <section className="w-full h-screen px-10 py-20 flex flex-col items-center gap-12">
         <p className="text-4xl font-bold">Featured Projects</p>
       </section>
-      <section className="w-full h-screen px-10 py-20 flex flex-col items-center gap-12">
-        <p className="text-4xl font-bold">Get in touch</p>
-      </section>
+      <ContactSection />
     </div>
   );
 };
