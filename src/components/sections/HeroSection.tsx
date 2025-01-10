@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const HeroSection = () => {
   return (
-    <div className="relative w-full h-screen flex justify-center items-center">
+    <section className="relative w-full h-svh flex justify-center items-center">
       <FloatingLogos />
 
       <div className="flex flex-col items-center gap-8 -mt-28">
@@ -46,7 +46,7 @@ const HeroSection = () => {
       </div>
 
       <ScrollDownArrow />
-    </div>
+    </section>
   );
 };
 

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { poppins } from "@/utils/fonts";
 import { Analytics } from "@vercel/analytics/react";
+import Footer from "@/components/common/Footer";
 
 export const metadata: Metadata = {
   title: {
@@ -61,6 +62,7 @@ export default function RootLayout({
             className="opacity-5 absolute -right-52 top-[20%] w-[400px]"
           />
           {children}
+          <Footer />
         </main>
 
         <Analytics />
