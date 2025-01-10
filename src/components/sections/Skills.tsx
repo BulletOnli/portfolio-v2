@@ -22,7 +22,7 @@ export const Skills = async () => {
     >
       <p className="text-4xl font-bold text-center">What I Use to Build</p>
 
-      <div className="w-full flex flex-wrap justify-center items-center gap-2 sm:gap-4">
+      <div className="w-full flex flex-wrap justify-center items-center gap-2">
         {skills.map((skill) => (
           <div
             key={skill._id}

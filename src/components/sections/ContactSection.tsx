@@ -1,12 +1,93 @@
+import { ArrowUpRight, Mail, MessageCircle, Phone } from "lucide-react";
+import Link from "next/link";
 import React from "react";
+import { FaGithub, FaInstagram, FaLinkedinIn, FaTiktok } from "react-icons/fa";
 
 const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="w-full h-screen px-10 py-20 flex flex-col items-center gap-12"
+      className="w-full sm:px-10 sm:py-16 flex flex-col items-center gap-8 sm:gap-12"
     >
-      <p className="text-4xl font-bold">Get in touch</p>
+      <div className="text-center space-y-2">
+        <p className="text-4xl font-bold">Get in touch</p>
+        <p className="max-w-md text-white/50">
+          Want to work together or just want to say hi? Feel free to reach out
+        </p>
+      </div>
+
+      <div className="w-full flex flex-col items-center gap-8">
+        <div className="w-full flex flex-wrap items-center justify-center gap-4">
+          <Link
+            href="mailto:bulletlangto@gmail.com"
+            className="w-full max-w-xs "
+          >
+            <div className="p-4 flex flex-col justify-center gap-4 bg-white/10 hover:bg-white/5 rounded-xl">
+              <div className="w-full flex justify-between gap-4">
+                <div className="flex items-center gap-2">
+                  <Mail /> Gmail
+                </div>
+
+                <ArrowUpRight className="text-orange" />
+              </div>
+              <p className="text-sm text-white/50 font-light">
+                bulletlangto@gmail.com
+              </p>
+            </div>
+          </Link>
+
+          <Link
+            href="https://m.me/gemmuel.delapena"
+            target="_blank"
+            className="w-full max-w-xs "
+          >
+            <div className="p-4 flex flex-col justify-center gap-4 bg-white/10 hover:bg-white/5 rounded-xl">
+              <div className="w-full flex justify-between gap-4">
+                <div className="flex items-center gap-2">
+                  <MessageCircle /> Messenger
+                </div>
+
+                <ArrowUpRight className="text-orange" />
+              </div>
+              <p className="text-sm text-white/50 font-light">
+                Gemmuel Dela Pena
+              </p>
+            </div>
+          </Link>
+
+          <div className="w-full max-w-xs p-4 flex flex-col justify-center gap-4 bg-white/10 rounded-xl">
+            <div className="flex items-center gap-2">
+              <Phone /> Call
+            </div>
+
+            <p className="text-sm text-white/50 font-light">---</p>
+          </div>
+        </div>
+
+        <div className="flex items-center gap-4">
+          <div className="w-12 sm:w-16 h-px bg-orange"></div>
+          <p className="text-nowrap">Stay Connected</p>
+          <div className="w-12 sm:w-16 h-px bg-orange"></div>
+        </div>
+
+        <div className="flex items-center gap-6">
+          <Link href="https://github.com/BulletOnli" target="_blank">
+            <FaGithub className="size-6 hover:text-orange" />
+          </Link>
+          <Link href="https://www.instagram.com/gem.muel" target="_blank">
+            <FaInstagram className="size-6 hover:text-orange" />
+          </Link>
+          <Link href="https://www.tiktok.com/@bulletonli" target="_blank">
+            <FaTiktok className="size-6 hover:text-orange" />
+          </Link>
+          <Link
+            href="https://www.linkedin.com/in/gemmuel-dela-pena"
+            target="_blank"
+          >
+            <FaLinkedinIn className="size-6 hover:text-orange" />
+          </Link>
+        </div>
+      </div>
     </section>
   );
 };

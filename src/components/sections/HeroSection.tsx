@@ -33,9 +33,14 @@ const HeroSection = () => {
                 Get in touch
               </button>
             </Link>
-            <button className="text-sm sm:text-base min-w-[10rem] px-8 py-3 bg-white bg-opacity-10 hover:bg-opacity-15 rounded-full">
-              About me
-            </button>
+            <Link
+              href="https://www.linkedin.com/in/gemmuel-dela-pena"
+              target="_blank"
+            >
+              <button className="text-sm sm:text-base min-w-[10rem] px-8 py-3 bg-white bg-opacity-10 hover:bg-opacity-15 rounded-full">
+                About me
+              </button>
+            </Link>
           </div>
         </div>
       </div>
