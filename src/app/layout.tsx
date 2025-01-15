@@ -49,7 +49,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={poppins.className}>
       <GoogleTagManager gtmId={process.env.GOOGLE_TAG_MANAGER_ID!} />
-      <body className={`${poppins.className} antialiased`}>
+      <body
+        className={`${poppins.className} antialiased`}
+        suppressHydrationWarning
+      >
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
