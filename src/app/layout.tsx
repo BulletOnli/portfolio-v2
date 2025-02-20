@@ -4,6 +4,7 @@ import { poppins } from "@/utils/fonts";
 import { Analytics } from "@vercel/analytics/react";
 import Footer from "@/components/common/Footer";
 import { GoogleTagManager } from "@next/third-parties/google";
+import ImageTrail from "../components/ImageTrail";
 
 export const metadata: Metadata = {
   title: {
@@ -85,6 +86,7 @@ export default function RootLayout({
         </main>
 
         <Analytics />
+        <ImageTrail />
       </body>
     </html>
   );
