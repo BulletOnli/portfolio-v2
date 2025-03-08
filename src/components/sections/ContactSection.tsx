@@ -22,7 +22,11 @@ const ContactSection = () => {
             href="mailto:bulletlangto@gmail.com"
             className="w-full max-w-xs "
           >
-            <div className="p-4 flex flex-col justify-center gap-4 bg-white/10 hover:bg-white/5 rounded-xl">
+            <div
+              data-aos="zoom-in"
+              data-aos-delay="200"
+              className="p-4 flex flex-col justify-center gap-4 bg-white/10 hover:bg-white/5 rounded-xl"
+            >
               <div className="w-full flex justify-between gap-4">
                 <div className="flex items-center gap-2">
                   <Mail /> Gmail
@@ -41,7 +45,11 @@ const ContactSection = () => {
             target="_blank"
             className="w-full max-w-xs "
           >
-            <div className="p-4 flex flex-col justify-center gap-4 bg-white/10 hover:bg-white/5 rounded-xl">
+            <div
+              data-aos="zoom-in"
+              data-aos-delay="200"
+              className="p-4 flex flex-col justify-center gap-4 bg-white/10 hover:bg-white/5 rounded-xl"
+            >
               <div className="w-full flex justify-between gap-4">
                 <div className="flex items-center gap-2">
                   <MessageCircle /> Messenger
@@ -55,7 +63,11 @@ const ContactSection = () => {
             </div>
           </Link>
 
-          <div className="w-full max-w-xs p-4 flex flex-col justify-center gap-4 bg-white/10 rounded-xl">
+          <div
+            data-aos="zoom-in"
+            data-aos-delay="200"
+            className="w-full max-w-xs p-4 flex flex-col justify-center gap-4 bg-white/10 rounded-xl"
+          >
             <div className="flex items-center gap-2">
               <Phone /> Call
             </div>

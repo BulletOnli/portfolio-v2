@@ -4,6 +4,7 @@ import { poppins } from "@/utils/fonts";
 import { Analytics } from "@vercel/analytics/react";
 import Footer from "@/components/common/Footer";
 import { GoogleTagManager } from "@next/third-parties/google";
+import GlobalProvider from "@/context/GlobalProvider";
 
 export const metadata: Metadata = {
   title: {
@@ -80,7 +81,7 @@ export default function RootLayout({
             alt="Background React"
             className="opacity-5 absolute -right-52 top-[20%] w-[400px]"
           />
-          {children}
+          <GlobalProvider>{children}</GlobalProvider>
           <Footer />
         </main>
 

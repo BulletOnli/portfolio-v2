@@ -10,18 +10,34 @@ const HeroSection = () => {
 
       <div className="flex flex-col items-center gap-8 -mt-28">
         <div className="space-y-2">
-          <h4 className="font-extrabold text-xl sm:text-3xl text-orange">
+          <h4
+            data-aos="fade-right"
+            data-aos-delay="300"
+            className="font-extrabold text-xl sm:text-3xl text-orange"
+          >
             I am
           </h4>
-          <h1 className="text-center uppercase font-extrabold text-5xl sm:text-6xl ">
+          <h1
+            data-aos="zoom-in"
+            data-aos-delay="100"
+            className="text-center uppercase font-extrabold text-5xl sm:text-6xl "
+          >
             GEMMUEL DELA Peña
           </h1>
-          <h4 className="font-extrabold text-xl sm:text-3xl  text-end text-orange">
+          <h4
+            data-aos="fade-left"
+            data-aos-delay="300"
+            className="font-extrabold text-xl sm:text-3xl  text-end text-orange"
+          >
             Web Developer
           </h4>
         </div>
 
-        <div className="flex flex-col items-center gap-4">
+        <div
+          data-aos="zoom-in-up"
+          data-aos-delay="600"
+          className="flex flex-col items-center gap-4"
+        >
           <p className="text-center text-white/50 max-w-xl">
             A web developer based in the Philippines, specializing in front-end
             development. Let&apos;s collaborate and bring your ideas to life!

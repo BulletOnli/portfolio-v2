@@ -15,7 +15,11 @@ const FloatingLogo = ({
   duration = 4,
 }: Props) => {
   return (
-    <div className={`flex items-center justify-center ${className}`}>
+    <div
+      data-aos="zoom-in"
+      data-aos-delay="600"
+      className={`flex items-center justify-center ${className}`}
+    >
       <div
         className="relative size-16 sm:size-20"
         style={{
