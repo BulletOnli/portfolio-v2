@@ -1,9 +1,38 @@
+import { sanityFetch } from "@/lib/sanity";
+import { CONTACTS_QUERY } from "@/query/sanity";
 import { ArrowUpRight, Mail, MessageCircle, Phone } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import { FaGithub, FaInstagram, FaLinkedinIn, FaTiktok } from "react-icons/fa";
 
-const ContactSection = () => {
+type Contact = {
+  email: {
+    label: string;
+    url: string;
+    value: string;
+  };
+  messenger: {
+    label: string;
+    url: string;
+    value: string;
+  };
+  phoneNumber: {
+    label: string;
+    url: string;
+    value: string;
+  };
+  github: string;
+  instagram: string;
+  tiktok: string;
+  linkedin: string;
+};
+
+const ContactSection = async () => {
+  const contact = await sanityFetch<Contact>({
+    query: CONTACTS_QUERY,
+  });
+
+
   return (
     <section
       id="contact"
@@ -19,7 +48,7 @@ const ContactSection = () => {
       <div className="w-full flex flex-col items-center gap-8">
         <div className="w-full flex flex-wrap items-center justify-center gap-4">
           <Link
-            href="mailto:bulletlangto@gmail.com"
+            href={`mailto:${contact.email.url}`}
             className="w-full max-w-xs "
           >
             <div
@@ -29,19 +58,19 @@ const ContactSection = () => {
             >
               <div className="w-full flex justify-between gap-4">
                 <div className="flex items-center gap-2">
-                  <Mail /> Gmail
+                  <Mail /> {contact.email.label}
                 </div>
 
                 <ArrowUpRight className="text-orange" />
               </div>
               <p className="text-sm text-white/50 font-light">
-                bulletlangto@gmail.com
+                {contact.email.url}
               </p>
             </div>
           </Link>
 
           <Link
-            href="https://m.me/gemmuel.delapena"
+            href={contact.messenger.url}
             target="_blank"
             className="w-full max-w-xs "
           >
@@ -52,13 +81,13 @@ const ContactSection = () => {
             >
               <div className="w-full flex justify-between gap-4">
                 <div className="flex items-center gap-2">
-                  <MessageCircle /> Messenger
+                  <MessageCircle /> {contact.messenger.label}
                 </div>
 
                 <ArrowUpRight className="text-orange" />
               </div>
               <p className="text-sm text-white/50 font-light">
-                Gemmuel Dela Pena
+                {contact.messenger.value}
               </p>
             </div>
           </Link>
@@ -69,10 +98,12 @@ const ContactSection = () => {
             className="w-full max-w-xs p-4 flex flex-col justify-center gap-4 bg-white/10 rounded-xl"
           >
             <div className="flex items-center gap-2">
-              <Phone /> Call
+              <Phone /> {contact.phoneNumber.label}
             </div>
 
-            <p className="text-sm text-white/50 font-light">---</p>
+            <p className="text-sm text-white/50 font-light">
+              {contact.phoneNumber.value}
+            </p>
           </div>
         </div>
 
@@ -83,17 +114,17 @@ const ContactSection = () => {
         </div>
 
         <div className="flex items-center gap-6">
-          <Link href="https://github.com/BulletOnli" target="_blank">
+          <Link href={contact.github} target="_blank">
             <FaGithub className="size-6 hover:text-orange" />
           </Link>
-          <Link href="https://www.instagram.com/gem.muel" target="_blank">
+          <Link href={contact.instagram} target="_blank">
             <FaInstagram className="size-6 hover:text-orange" />
           </Link>
-          <Link href="https://www.tiktok.com/@bulletonli" target="_blank">
+          <Link href={contact.tiktok} target="_blank">
             <FaTiktok className="size-6 hover:text-orange" />
           </Link>
           <Link
-            href="https://www.linkedin.com/in/gemmuel-dela-pena"
+            href={contact.linkedin}
             target="_blank"
           >
             <FaLinkedinIn className="size-6 hover:text-orange" />
