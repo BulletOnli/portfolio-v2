@@ -45,7 +45,7 @@ const HeroSection = () => {
 
           <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4">
             <Link href="#contact">
-              <button className="text-sm sm:text-base font-semibold min-w-[10rem] px-8 py-3  bg-orange bg-opacity-70 hover:bg-opacity-65 rounded-full">
+              <button className="text-sm sm:text-base font-semibold min-w-[10rem] px-8 py-3  bg-orange/70 hover:bg-orange/65 rounded-full">
                 Get in touch
               </button>
             </Link>
@@ -53,7 +53,7 @@ const HeroSection = () => {
               href="https://www.linkedin.com/in/gemmuel-dela-pena"
               target="_blank"
             >
-              <button className="text-sm sm:text-base min-w-[10rem] px-8 py-3 bg-white bg-opacity-10 hover:bg-opacity-15 rounded-full">
+              <button className="text-sm sm:text-base min-w-[10rem] px-8 py-3 bg-white/10 hover:bg-white/15 rounded-full">
                 About me
               </button>
             </Link>

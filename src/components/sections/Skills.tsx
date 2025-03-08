@@ -22,7 +22,7 @@ export const Skills = async () => {
             data-aos="zoom-out-up"
             data-aos-delay={50 * index}
             key={skill._id}
-            className="relative size-24 sm:size-28 max-w-28 p-4 flex flex-grow flex-col justify-center items-center gap-2 rounded-xl bg-white/10 "
+            className="relative size-24 sm:size-28 max-w-28 p-4 flex grow flex-col justify-center items-center gap-2 rounded-xl bg-white/10 "
           >
             <div className="relative w-full h-full flex justify-center items-center">
               <Image
