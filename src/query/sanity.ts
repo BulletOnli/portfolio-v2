@@ -9,3 +9,14 @@ export const CONTACTS_QUERY = `*[_type == "contact"][0] {
   tiktok,
   linkedin
 }`;
+
+export const PROJECTS_QUERY = `*[_type == "project"] | order(_createdAt asc) {
+  _id,
+  name,
+  description,
+  imageSrc,
+  tags,
+  liveUrl,
+  githubUrl,
+  note
+}`;

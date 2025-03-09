@@ -1,37 +1,15 @@
 import { sanityFetch } from "@/lib/sanity";
 import { CONTACTS_QUERY } from "@/query/sanity";
+import { Contact } from "@/types/sanity";
 import { ArrowUpRight, Mail, MessageCircle, Phone } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import { FaGithub, FaInstagram, FaLinkedinIn, FaTiktok } from "react-icons/fa";
 
-type Contact = {
-  email: {
-    label: string;
-    url: string;
-    value: string;
-  };
-  messenger: {
-    label: string;
-    url: string;
-    value: string;
-  };
-  phoneNumber: {
-    label: string;
-    url: string;
-    value: string;
-  };
-  github: string;
-  instagram: string;
-  tiktok: string;
-  linkedin: string;
-};
-
 const ContactSection = async () => {
   const contact = await sanityFetch<Contact>({
     query: CONTACTS_QUERY,
   });
-
 
   return (
     <section
@@ -123,10 +101,7 @@ const ContactSection = async () => {
           <Link href={contact.tiktok} target="_blank">
             <FaTiktok className="size-6 hover:text-orange" />
           </Link>
-          <Link
-            href={contact.linkedin}
-            target="_blank"
-          >
+          <Link href={contact.linkedin} target="_blank">
             <FaLinkedinIn className="size-6 hover:text-orange" />
           </Link>
         </div>
