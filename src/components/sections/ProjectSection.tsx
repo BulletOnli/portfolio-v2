@@ -89,7 +89,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
           {project.liveUrl && (
             <Link href={project.liveUrl} target="_blank">
               <div className="flex items-center gap-1 text-xs">
-                Live Demo <ArrowUpRight className="text-orange" />
+                Live Preview <ArrowUpRight className="text-orange" />
               </div>
             </Link>
           )}
