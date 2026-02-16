@@ -5,6 +5,9 @@ import { Analytics } from "@vercel/analytics/react";
 import Footer from "@/components/common/Footer";
 import { GoogleTagManager } from "@next/third-parties/google";
 import GlobalProvider from "@/context/GlobalProvider";
+import { sanityFetch } from "@/lib/sanity";
+import { CONTACTS_QUERY } from "@/query/sanity";
+import { Contact } from "@/types/sanity";
 
 export const metadata: Metadata = {
   title: {
@@ -42,11 +45,30 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const contact = await sanityFetch<Contact>({
+    query: CONTACTS_QUERY,
+  });
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Gemmuel Dela Peña",
+    url: process.env.NEXT_PUBLIC_BASE_URL,
+    jobTitle: "Web Developer",
+    sameAs: [
+      contact.github,
+      contact.linkedin,
+      contact.instagram,
+      contact.tiktok,
+    ],
+    email: contact.email.url,
+  };
+
   return (
     <html lang="en" className={poppins.className}>
       <GoogleTagManager gtmId={process.env.GOOGLE_TAG_MANAGER_ID!} />
@@ -54,6 +76,10 @@ export default function RootLayout({
         className={`${poppins.className} antialiased`}
         suppressHydrationWarning
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
