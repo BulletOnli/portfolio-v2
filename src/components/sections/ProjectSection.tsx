@@ -47,26 +47,30 @@ type ProjectCardProps = {
 const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
   return (
     <div className="w-full flex flex-col md:flex-row gap-4 justify-center items-center">
-      <Image
-        data-aos="fade-right"
-        width={400}
-        height={250}
-        src={urlFor(project.imageSrc)?.url() as string}
-        alt={project.name + " image"}
-        className="w-[400px] h-[250px] rounded-lg object-cover"
-        sizes="100vw"
-      />
+      <Link href={project.liveUrl} target="_blank">
+        <Image
+          data-aos="fade-right"
+          width={400}
+          height={250}
+          src={urlFor(project.imageSrc)?.url() as string}
+          alt={project.name + " image"}
+          className="w-[400px] h-[250px] rounded-lg object-cover"
+          sizes="100vw"
+        />
+      </Link>
 
       <div
         data-aos="zoom-in"
         data-aos-delay="200"
         className="w-full max-w-lg flex flex-col items-center gap-4 text-center"
       >
-        <h2 className="text-xl md:text-2xl font-semibold">{project.name}</h2>
+        <div className="space-y-2">
+          <h2 className="text-xl md:text-2xl font-semibold">{project.name}</h2>
 
-        <p className="text-md md:text-base text-white/50">
-          {project.description}
-        </p>
+          <p className="text-md md:text-base text-white/50">
+            {project.description}
+          </p>
+        </div>
 
         <div className="flex flex-wrap justify-center items-center gap-1 text-white/80 mx-auto">
           {project.tags.map((tag) => (

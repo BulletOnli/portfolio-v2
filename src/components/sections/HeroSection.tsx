@@ -29,7 +29,7 @@ const HeroSection = () => {
             data-aos-delay="300"
             className="font-extrabold text-xl sm:text-3xl  text-end text-orange"
           >
-            Web Developer
+            Product-Minded Web Developer
           </h4>
         </div>
 
@@ -39,8 +39,9 @@ const HeroSection = () => {
           className="flex flex-col items-center gap-4"
         >
           <p className="text-center text-white/50 max-w-xl">
-            A web developer based in the Philippines, specializing in front-end
-            development. Let&apos;s collaborate and bring your ideas to life!
+            A developer and indie maker based in the Philippines. I love taking
+            projects from an initial idea all the way to launch, creating web
+            experiences that people actually use and enjoy.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4">
